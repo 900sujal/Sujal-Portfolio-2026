@@ -1,0 +1,41 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
+interface ProjectCardProps {
+  title: string
+  description: string
+  tech: string[]
+  image: string
+  tags: string[]
+}
+
+export function ProjectCard({ title, description, tech, image, tags }: ProjectCardProps) {
+  return (
+    <motion.article whileHover={{ y: -6 }} className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-glow transition duration-300">
+      <div className="mb-6 overflow-hidden rounded-3xl bg-slate-950/80">
+        <div className="h-52 bg-slate-800 bg-cover bg-center" style={{ backgroundImage: `url(${image})` }} />
+      </div>
+      <div className="space-y-4">
+        <div className="flex items-center justify-between gap-4">
+          <h3 className="text-xl font-semibold text-slate-100">{title}</h3>
+          <span className="rounded-full border border-cyan-400/15 bg-cyan-400/10 px-3 py-1 text-xs uppercase tracking-[0.18em] text-cyan-200">Featured</span>
+        </div>
+        <p className="text-sm leading-6 text-slate-400">{description}</p>
+        <div className="flex flex-wrap gap-2">
+          {tech.map(item => (
+            <span key={item} className="rounded-2xl bg-slate-800/90 px-3 py-1 text-xs text-slate-300">{item}</span>
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-3 pt-4">
+          <button className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:brightness-110">
+            View Details
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/70 px-4 py-2 text-sm text-slate-200 transition hover:border-cyan-400/30 hover:text-cyan-100">
+            GitHub
+          </button>
+        </div>
+      </div>
+    </motion.article>
+  )
+}
