@@ -12,7 +12,15 @@ export default function ProjectsPage() {
         <SectionHeading eyebrow="Projects" title="Selected Work" subtitle="Showcasing web and mobile applications built with modern architecture, user experience, and API integrations." />
         <div className="grid gap-8 lg:grid-cols-3">
           {projects.map(project => (
-            <ProjectCard key={project.title} title={project.title} description={project.description} tech={project.tech} image={project.image} tags={project.tech} />
+            <ProjectCard
+              key={project.title}
+              title={project.title}
+              description={project.description}
+              tech={project.tech}
+              image={project.image}
+              liveUrl={project.liveUrl}
+              repoUrl={project.repoUrl}
+            />
           ))}
         </div>
       </div>

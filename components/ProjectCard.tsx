@@ -7,10 +7,11 @@ interface ProjectCardProps {
   description: string
   tech: string[]
   image: string
-  tags: string[]
+  liveUrl?: string
+  repoUrl?: string
 }
 
-export function ProjectCard({ title, description, tech, image, tags }: ProjectCardProps) {
+export function ProjectCard({ title, description, tech, image, liveUrl, repoUrl }: ProjectCardProps) {
   return (
     <motion.article whileHover={{ y: -6 }} className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-glow transition duration-300">
       <div className="mb-6 overflow-hidden rounded-3xl bg-slate-950/80">
@@ -28,12 +29,21 @@ export function ProjectCard({ title, description, tech, image, tags }: ProjectCa
           ))}
         </div>
         <div className="flex flex-wrap gap-3 pt-4">
-          <button className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:brightness-110">
-            View Details
-          </button>
-          <button className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/70 px-4 py-2 text-sm text-slate-200 transition hover:border-cyan-400/30 hover:text-cyan-100">
-            GitHub
-          </button>
+          {liveUrl ? (
+            <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:brightness-110">
+              View Details
+            </a>
+          ) : (
+            <button disabled className="inline-flex items-center gap-2 rounded-full bg-slate-700/60 px-4 py-2 text-sm font-semibold text-slate-400" title="No live demo">
+              View Details
+            </button>
+          )}
+
+          {repoUrl ? (
+            <a href={repoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/70 px-4 py-2 text-sm text-slate-200 transition hover:border-cyan-400/30 hover:text-cyan-100">
+              GitHub
+            </a>
+          ) : null}
         </div>
       </div>
     </motion.article>
