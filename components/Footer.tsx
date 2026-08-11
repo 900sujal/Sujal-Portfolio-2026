@@ -20,9 +20,9 @@ const services = [
 const technologies = ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'JavaScript']
 
 const social = [
-  { label: 'GitHub', href: '#', icon: Github },
-  { label: 'LinkedIn', href: '#', icon: Linkedin },
-  { label: 'Email', href: 'mailto:hello@example.com', icon: Mail },
+  { label: 'GitHub', href: 'https://github.com/900sujal', icon: Github },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sujal-prajapati-46651732a/', icon: Linkedin },
+  { label: 'Email', href: 'mailto:sujalprajapati9000@gmail.com', icon: Mail },
 ]
 
 export function Footer() {
