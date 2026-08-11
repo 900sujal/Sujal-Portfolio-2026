@@ -36,7 +36,7 @@ export default function HomePage() {
               <div className="space-y-4">
                 <p className="text-sm uppercase tracking-[0.4em] text-slate-300/80">Hi, I&apos;m</p>
                 <h1 className="text-6xl font-black tracking-tight text-white sm:text-7xl md:text-8xl">
-                  Sujal <span className="bg-gradient-to-r from-violet-400 via-cyan-300 to-slate-100 bg-clip-text text-transparent">Praajapati</span>
+                  Sujal <span className="bg-gradient-to-r from-violet-400 via-cyan-300 to-slate-100 bg-clip-text text-transparent">Prajapati</span>
                 </h1>
               </div>
               <p className="max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">I build responsive full-stack applications with MongoDB, Express.js, React.js, and Node.js. I specialize in REST APIs, authentication systems, and polished user experiences for growth-driven products.</p>
