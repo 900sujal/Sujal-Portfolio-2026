@@ -20,9 +20,14 @@ const services = [
 const technologies = ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'JavaScript']
 
 const social = [
-  { label: 'GitHub', href: 'https://github.com/900sujal', icon: Github },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sujal-prajapati-46651732a/', icon: Linkedin },
-  { label: 'Email', href: 'mailto:sujalprajapati9000@gmail.com', icon: Mail },
+  { label: 'GitHub', href: 'https://github.com/900sujal', icon: Github, newTab: true },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sujal-prajapati-46651732a/', icon: Linkedin, newTab: true },
+  {
+    label: 'Email',
+    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=sujalprajapati9000@gmail.com&su=Portfolio%20Inquiry',
+    icon: Mail,
+    newTab: true,
+  },
 ]
 
 export function Footer() {
@@ -39,10 +44,19 @@ export function Footer() {
           <div className="flex items-center gap-3">
             {social.map(item => {
               const Icon = item.icon
+              const isExternalLink = item.newTab
+
               return (
-                <Link key={item.label} href={item.href} aria-label={item.label} className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-slate-900/80 text-slate-300 transition hover:border-cyan-400/30 hover:text-cyan-200">
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={isExternalLink ? '_blank' : undefined}
+                  rel={isExternalLink ? 'noopener noreferrer' : undefined}
+                  aria-label={item.label}
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-slate-900/80 text-slate-300 transition hover:border-cyan-400/30 hover:text-cyan-200"
+                >
                   <Icon size={18} />
-                </Link>
+                </a>
               )
             })}
           </div>

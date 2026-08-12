@@ -11,23 +11,17 @@ const details = [
 
 export default function ContactPage() {
   return (
-    <section className="px-4 py-10 sm:px-5 lg:px-8 lg:py-16">
+    <section className="px-5 py-16 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <SectionHeading eyebrow="Contact" title="Let's Build Something Great Together" subtitle="I&apos;m open to opportunities, collaborations and interesting projects. Reach out to start the conversation." />
-        <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10">
-          <div className="space-y-4 rounded-[1.75rem] border border-white/10 bg-slate-950/80 p-4 shadow-glow sm:p-6 lg:p-8">
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="space-y-6 rounded-[2rem] border border-white/10 bg-slate-950/80 p-8 shadow-glow">
             {details.map(item => (
-              <a
-                key={item.label}
-                href={item.href}
-                target={item.href.startsWith('http') ? '_blank' : undefined}
-                rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
-                className="group flex w-full min-w-0 items-start gap-3 rounded-2xl border border-white/10 bg-slate-900/80 px-3 py-3 text-slate-300 transition hover:border-cyan-400/30 hover:text-cyan-100 sm:gap-4 sm:px-5 sm:py-5"
-              >
-                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-200 sm:h-12 sm:w-12 sm:rounded-3xl"><item.icon size={20} /></span>
-                <div className="min-w-0 flex-1">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-cyan-300/90 sm:text-xs lg:text-sm">{item.label}</p>
-                  <p className="mt-2 break-all text-sm text-slate-100 sm:text-base">{item.value}</p>
+              <a key={item.label} href={item.href} className="group flex items-center gap-4 rounded-3xl border border-white/10 bg-slate-900/80 px-5 py-5 text-slate-300 transition hover:border-cyan-400/30 hover:text-cyan-100">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-cyan-500/10 text-cyan-200"><item.icon size={20} /></span>
+                <div>
+                  <p className="text-sm uppercase tracking-[0.24em] text-cyan-300/90">{item.label}</p>
+                  <p className="mt-2 text-base text-slate-100">{item.value}</p>
                 </div>
               </a>
             ))}

@@ -55,6 +55,24 @@ section {
   box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.12), 0 24px 60px rgba(124, 58, 237, 0.09);
 }
 
+@keyframes aurora {
+  0% {
+    transform: translate3d(-8%, 0%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(8%, 6%, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-8%, 0%, 0) scale(1);
+  }
+}
+
+.aurora-shell {
+  background: linear-gradient(120deg, rgba(52, 211, 153, 0.08), rgba(168, 85, 247, 0.18), rgba(34, 211, 238, 0.08), rgba(15, 23, 42, 0));
+  filter: blur(18px);
+  animation: aurora 16s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
